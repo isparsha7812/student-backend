@@ -27,7 +27,7 @@ exports.login= async(req,res)=>{
         
          student.password= undefined;
          res.json({message:"Login successfully"}),
-         token,
+        token,
          student
          
     }

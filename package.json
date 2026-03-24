@@ -10,9 +10,9 @@
 
   "scripts": {
 
-    "start": "node server.js",
+    "start": "node index.js",
 
-    "dev": "nodemon server.js"
+    "dev": "nodemon index.js"
 
   },
 
