@@ -5,6 +5,7 @@ const connectDB = require("./config/db")
 const studentRoutes = require("./routes/studentRoutes")
 const auth= require("./middleware/authMiddleware")
 const authRoutes = require("./routes/authRoutes")
+const  studentAuthRoutes=require("./routes/studentAuthRoutes")
 
 // Connect DB
 connectDB()
@@ -30,6 +31,7 @@ app.get ("/admin",auth,(req,res)=>{
         message:"Welcome Admin Dashboard!!"
     })
 })
+app.use("/api/students",studentAuthRoutes)
 
 // Start server
 const PORT = process.env.PORT || 5000

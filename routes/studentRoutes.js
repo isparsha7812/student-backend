@@ -4,6 +4,7 @@
 const express = require("express")
 const router = express.Router()
 const { addStudent, updateStudent,deleteStudent,getAllStudents,getStudentById } = require("../controllers/studentControllers")
+const {getMyProfile,updateMyProfile}=require("../controllers/studentProfile")
 const upload = require("../config/multer")
 const auth = require("../middleware/authMiddleware")
 
@@ -17,9 +18,10 @@ router.put("/:id",upload.single("image"),auth, updateStudent)
 //delete students
 router.delete("/:id",auth, deleteStudent)
 
-//get student
+//get students
 router.get("/",getAllStudents)
 
 router.get("/:id",getStudentById)
 
-module.exports = router
+
+module.exports = router;

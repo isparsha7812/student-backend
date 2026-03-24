@@ -7,16 +7,16 @@ const studentSchema = new mongoose.Schema({
 
   name: {
     type: String,
-    required: true,   
-    trim: true        
+    required: true,
+    trim: true
   },
 
   // student email
   email: {
     type: String,
     required: true,
-    unique: true,    
-    lowercase: true,  
+    unique: true,
+    lowercase: true,
     trim: true
   },
 
@@ -49,29 +49,34 @@ const studentSchema = new mongoose.Schema({
   //dueAmount
   dueAmount:
   {
-    type:Number,
-   
+    type: Number,
 
   },
 
   //status
-  
-  status:{
-    type:String,
-    required:true,
-     default:"pending"
-    
+
+  status: {
+    type: String,
+    required: true,
+    default:"pending"
+
   },
 
   // image filename stored locally
   image: {
     type: String,
     default: null
-  }
+  },
+  password: {
+    type: String,
+    required: true,
+    select: false
 
+  }
 }, {
-  timestamps: true 
+  timestamps: true
 })
 
 // export mongoose model
+
 module.exports = mongoose.model("Student", studentSchema)
